@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precision Farming Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌱 Precision Farming Assistant</h1>
+        
+        <!-- Dashboard Section -->
+        <div id="dashboard" class="dashboard-grid">
+            <div class="card weather-card">
+                <h3>🌤️ Local Weather</h3>
+                <div id="weather-data">Loading...</div>
+            </div>
+            <div class="card sensors-card">
+                <h3>📊 Field Sensors</h3>
+                <div id="sensor-data" class="sensor-grid">Loading...</div>
+            </div>
+        </div>
+
+        <div id="chat">
+            <div id="messages"></div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Ask about irrigation, fertilization, or crop management..." autocomplete="off" required />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <div id="recommendations">
+            <h2>Recommendations</h2>
+            <div id="recommendation-content"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+

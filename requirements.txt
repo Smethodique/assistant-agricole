@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+langchain
+langchain-google-genai
+langchain-community
+chromadb
+python-dotenv
+requests
+pandas
+numpy
+pydantic
+sentence-transformers
+google-generativeai
+langchain-groq
+langchain-chroma

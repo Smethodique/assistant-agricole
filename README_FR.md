@@ -1,0 +1,85 @@
+# 🌱 Precision Farming Assistant (RAG & Live Data)
+
+Un assistant agricole intelligent alimenté par l'IA qui aide les agriculteurs à prendre des décisions basées sur des données réelles et des connaissances agronomiques.
+
+Le système utilise le **RAG (Retrieval-Augmented Generation)** pour combiner des documents de recherche agricole avec des données environnementales en temps réel (Météo & Capteurs).
+
+---
+
+## 🚀 Fonctionnalités Clés
+
+- **🧠 Intelligence RAG** : Interroge une base de connaissances locale (PDF, TXT) pour fournir des conseils sur l'irrigation, la fertilisation et la gestion des cultures.
+- **🌤️ Météo en Temps Réel** : Intégration de l'API Open-Meteo pour obtenir les conditions actuelles (température, humidité, précipitations) à **Oujda, Maroc**.
+- **📊 Tableau de Bord des Capteurs** : Simulation de capteurs connectés (Humidité du sol, pH, humidité foliaire, radiation solaire) mise à jour toutes les 10 secondes.
+- **🌍 Géocodage Inversé** : Extraction automatique du nom de la ville à partir des coordonnées GPS.
+- **💬 Chatbot Contextuel** : Un assistant IA qui analyse simultanément vos documents et vos données capteurs pour répondre à vos questions.
+- **🐳 Dockerisé** : Déploiement facile et rapide avec Docker et Docker Compose.
+
+---
+
+## 🛠️ Stack Technique
+
+- **Backend** : FastAPI (Python 3.11)
+- **IA/RAG** : LangChain, Groq (Llama 3.3), ChromaDB, Sentence Transformers
+- **Frontend** : HTML5, CSS3 Moderne, JavaScript (Vanilla)
+- **Serveur Web** : Nginx (utilisé comme reverse proxy)
+- **Conteneurisation** : Docker, Docker Compose
+
+---
+
+## 🏗️ Architecture du Projet
+
+```mermaid
+graph TD
+    User[Agriculteur] --> Frontend[Frontend - Nginx Port 8005]
+    Frontend --> API_Proxy[Nginx Reverse Proxy /api]
+    API_Proxy --> Backend[Backend - FastAPI Port 8000]
+    Backend --> RAG[RAG Engine - LangChain]
+    RAG --> Chroma[ChromaDB - Base de Connaissances]
+    Backend --> Weather[API Météo - Open-Meteo]
+    Backend --> Sensors[Simulateur de Capteurs]
+    RAG --> LLM[Groq Cloud - Llama 3.3]
+```
+
+---
+
+## 🚀 Installation et Démarrage
+
+### 1. Prérequis
+- Docker et Docker Compose installés sur votre machine.
+- Une clé API Groq (disponible gratuitement sur [console.groq.com](https://console.groq.com)).
+
+### 2. Configuration
+Créez un fichier `.env` à la racine du projet (ou copiez `.env.example`) :
+```env
+GROQ_API_KEY=votre_cle_api_ici
+```
+
+### 3. Lancer l'application
+Exécutez la commande suivante dans le terminal :
+```bash
+docker compose up --build
+```
+
+### 4. Accès
+- **Interface Web** : [http://localhost:8005](http://localhost:8005)
+- **Documentation API** : [http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## 📖 Utilisation
+
+1.  **Dashboard** : Consultez les cartes en haut de la page pour voir la météo actuelle à Oujda et les relevés de vos capteurs.
+2.  **Assistant IA** : Posez des questions comme : *"Est-ce que je dois arroser mon blé aujourd'hui ?"*
+3.  **Analyse Intelligente** : L'IA comparera les relevés (ex: humidité du sol à 30%) avec les directives de vos documents (ex: besoin de 60%) pour vous donner une réponse personnalisée.
+
+---
+
+## 📁 Structure des Données
+- `/data/agriculture_docs` : Déposez vos fichiers texte ici pour enrichir la base de connaissances de l'IA.
+- `/data/embeddings` : Stockage persistant de la base de données vectorielle ChromaDB.
+
+---
+
+## 📄 Licence
+Ce projet est développé pour aider à la modernisation de l'agriculture grâce à l'IA.

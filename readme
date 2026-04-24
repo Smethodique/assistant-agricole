@@ -1,0 +1,45 @@
+# 🌱 Precision Farming Assistant (RAG-Based AI System)
+
+An AI-powered smart farming assistant that helps farmers make data-driven decisions about:
+- 🌡️ Irrigation timing  
+- 🌿 Fertilization planning  
+- 🌾 Crop management  
+
+The system uses **RAG (Retrieval-Augmented Generation)** to combine real-time environmental data with agricultural knowledge.
+
+---
+
+# 🚀 Features
+
+- 🌦️ Weather-aware recommendations (temperature, humidity, forecast)
+- 🌱 Smart irrigation suggestions
+- 📚 Agricultural knowledge base (RAG)
+- 💬 AI farming chatbot
+- 📊 Simulated sensor data (no IoT required)
+- 📈 Decision explanations (why the system suggests an action)
+
+---
+
+# 🧠 How It Works
+
+The system combines:
+
+1. **Live Data**
+   - Temperature
+   - Soil moisture (simulated)
+   - Weather API data
+
+2. **Knowledge Base (RAG)**
+   - Farming rules
+   - Crop care guidelines
+   - Agricultural research documents
+
+3. **AI Engine**
+   - Retrieves relevant knowledge
+   - Combines it with real-time data
+   - Generates recommendations
+
+---
+
+# 🏗️ Architecture
+
